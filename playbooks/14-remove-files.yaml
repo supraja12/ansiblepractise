@@ -1,0 +1,11 @@
+- name : DEMO on remove the files
+  hosts : DEV
+  tasks :
+    - name : remove the files
+      file :
+        path : "{{item}}"
+        state : absent
+      with_items :
+        - /tmp/demo/abc
+        - /tmp/demo/def
+        - /tmp/demo/efg

@@ -1,0 +1,25 @@
+- name : DEMO on tags
+  hosts : DEV
+  tags :
+    - DEV
+  tasks :
+    - name : TASK1
+      debug :
+        msg : "Hello from DEV task"
+
+    - name : TASK2
+      debug :
+        msg : "Hello from PROD task"
+
+- name : PLAY2
+  hosts : DEV
+  tags :
+    - PROD
+  tasks :
+    - name : TASK1
+      debug :
+        msg : "Hello from PLAY2 and TASK1"
+
+    - name : TASK2
+      debug :
+        msg : "Hello from PLAY2 and TASK2"

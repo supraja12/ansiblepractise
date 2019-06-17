@@ -1,0 +1,18 @@
+- name : DEMO on setting variables
+  hosts : DEV
+  tasks : 
+    - name : running the command
+      shell : id -u
+      register : out
+
+    - name : print the out value
+      debug :
+        msg : "{{out.stdout}}"
+
+    - name : setting the variable
+      set_fact :
+        ID : "{{out.stdout}}"
+
+    - name : print ID
+      debug :
+        msg : "USER_ID = {{ID}}"

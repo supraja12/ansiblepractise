@@ -1,0 +1,6 @@
+- name : DEMO on variables from inventory
+  hosts : DEV
+  tasks :
+    - name : print variables from inventory
+      debug :
+        msg : "Hello name= {{NAME}}, IP = {{IP}}"

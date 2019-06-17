@@ -1,0 +1,9 @@
+- name : Demo on loops
+  hosts : DEV
+  tasks :
+    - name : print the loops
+      debug : "Name = {{item}}"
+      with_items :
+        - Rama
+        - Rahim
+        - Robert

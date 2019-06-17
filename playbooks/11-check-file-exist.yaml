@@ -1,0 +1,21 @@
+- name : check the file exist
+  hosts : DEV
+  tasks :
+    - name : checking the file statistics
+      stat :
+        path : /etc/passwd12344
+      register : out
+
+    - name : print the output
+      debug :
+        msg : "{{out}}"
+
+    - name : file is exists
+      debug :
+        msg : "file is exists"
+      when : out.stat.exists == true
+
+    - name : file does not exists
+      debug :
+        msg : "file does not exists"
+      when : out.stat.exists == false

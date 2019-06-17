@@ -1,0 +1,21 @@
+- name : checking the errors
+  hosts : DEV
+  tasks :
+    - name : fail this task
+      shell : ls -ltr
+      register : out
+      ignore_errors : True
+
+    - name : print the output
+      debug :
+        msg : "{{out}}"
+
+    - name : success task
+      debug :
+        msg : "Hello from success"
+      when : out | succeeded
+
+    - name : failed task
+      debug :
+        msg : "Hello from failed"
+      when : out | failed

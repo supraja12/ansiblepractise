@@ -1,0 +1,19 @@
+- name : DEMO and find and remove
+  hosts : DEV
+  tasks :
+    - name : find the .log files
+      find :
+        paths : /tmp/demo
+        file_type : any
+        #patterns : '*.log'
+      register : out
+
+    - name : print the output
+      debug :
+        msg : "{{out}}"
+
+    - name : remove the files
+      file :
+        path : "{{item.path}}"
+        state : absent
+      with_items : "{{out.files}}"

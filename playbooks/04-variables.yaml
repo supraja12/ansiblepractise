@@ -1,0 +1,12 @@
+- name : Demo on variables
+  hosts : DEV
+  vars :
+    NAME : JAVA
+  tasks :
+    - name : print some variable
+      debug :
+        msg : "Hello I am learning {{NAME}}"
+
+    - name : print test from another tasks
+      debug :
+        msg : "Hello I am learning {{NAME}}"

@@ -1,0 +1,11 @@
+- name : DEMO on advanced loop
+  hosts : DEV
+  become : yes
+  tasks :
+    - name : installing and un installing
+      yum :
+        name : "{{item.name}}"
+        state : "{{item.state}}"
+      with_items :
+        - { name : 'httpd', state : 'latest' }
+        - { name : 'httpd-devel', state : 'absent'}

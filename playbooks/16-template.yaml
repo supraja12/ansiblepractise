@@ -1,0 +1,33 @@
+- name : DEMO on template
+  hosts : DEV
+  tasks :
+    - name : create dev db variables
+      set_fact :
+        DB_NAME : studentdevapp
+        DB_USER : student
+        DB_PASSWORD : student@1
+      tags :
+        - DEV
+
+    - name : create dev db variables
+      set_fact :
+        DB_NAME : studentdevapp
+        DB_USER : student
+        DB_PASSWORD : student@1
+      tags :
+        - QA
+
+    - name : create dev db variables
+      set_fact :
+        DB_NAME : studentdevapp
+        DB_USER : student
+        DB_PASSWORD : student@1
+      tags :
+        - PROD
+
+    - name : task on template
+      template :
+        src : ../files/studentdevapp.sql.j2
+        dest : /tmp/student.sql
+      tags :
+        - always
