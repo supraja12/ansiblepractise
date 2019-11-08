@@ -1,1 +1,1 @@
-application-server2
+application-server2 ansible_ssh_user=admin123 ansible_ssh_pass=admin123
