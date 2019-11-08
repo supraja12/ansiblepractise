@@ -1,6 +1,5 @@
 - name : Demo on YAML syntax
   hosts : DEV
-  become: yes
-  tasks :
+  become : yes
     - name : first task
       ping :
