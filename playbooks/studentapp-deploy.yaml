@@ -42,15 +42,15 @@
         dest : "{{TOMCAT_DIR}}/webapps/"
       become_user : "{{USERNAME}}"
 
-    - name : check tomcat is running or not
-      shell : ps -ef | grep tomcat | grep -v grep
-      register : out
-      ignore_errors : True
+   # - name : check tomcat is running or not
+    #  shell : ps -ef | grep tomcat | grep -v grep
+     # register : out
+     # ignore_errors : True
 
-    - name : start the tomcat
-      shell : "nohup sh {{TOMCAT_DIR}}/bin/startup.sh"
-      when : out.rc != 0
+    #- name : start the tomcat
+     # shell : "nohup sh {{TOMCAT_DIR}}/bin/startup.sh"
+      #when : out.rc != 0
 
-    - name : restart the tomcat
-      shell : "nohup sh {{TOMCAT_DIR}}/bin/shutdown.sh && nohup sh {{TOMCAT_DIR}}/bin/startup.sh"
-      when : out.rc == 0
+    #- name : restart the tomcat
+     # shell : "nohup sh {{TOMCAT_DIR}}/bin/shutdown.sh && nohup sh {{TOMCAT_DIR}}/bin/startup.sh"
+      #when : out.rc == 0
