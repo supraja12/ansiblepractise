@@ -21,7 +21,7 @@
     - name : find the files and folders from webapps
       find :
         paths : "{{TOMCAT_DIR}}/webapps"
-        file_type : *.war
+        file_type : student.war
       register : out
       become_user : "{{USERNAME}}"
 
