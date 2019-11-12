@@ -1,3 +1,4 @@
-[DEV]
-application-server2 ansible_ssh_user=admin123 ansible_ssh_pass=admin123
-application-server1 ansible_ssh_user=admin123 ansible_ssh_pass=admin123
+[STAGE]
+student-staging-testing-server ansible_ssh_user=student ansible_ssh_pass=admin123
+[PROD]
+student-prod-server ansible_ssh_user=student ansible_ssh_pass=admin123
