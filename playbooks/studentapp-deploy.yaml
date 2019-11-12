@@ -39,7 +39,7 @@
     - name : download the latest student war file
       get_url :
         url : "{{STUNDENTWAR}}"
-        dest : "{{TOMCAT_DIR}}/webapps/student.war"
+        dest : "{{TOMCAT_DIR}}/webapps/"
       become_user : "{{USERNAME}}"
 
     - name : check tomcat is running or not
