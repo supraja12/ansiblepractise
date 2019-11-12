@@ -1,4 +1,4 @@
 [STAGE]
-student-staging-testing-server ansible_ssh_user=student ansible_ssh_pass=admin123
+student-staging-testing-server ansible_ssh_user=student ansible_ssh_pass=student
 [PROD]
-student-prod-server ansible_ssh_user=student ansible_ssh_pass=admin123
+student-prod-server ansible_ssh_user=student ansible_ssh_pass=student
