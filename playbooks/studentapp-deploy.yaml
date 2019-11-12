@@ -1,10 +1,11 @@
 - name : deploying the student project
-  hosts : DEV
+  hosts : STAGE
   become : yes
   vars :
-    - USERNAME : tomcat
-    - TOMCAT_PATH : /tomcat
-    - TOMCAT_DIR : "{{TOMCAT_PATH}}/apache-tomcat-9.0.14"
+    - USERNAME : student
+    - TOMCAT_PATH : /home/student/
+    - TOMCAT_DIR : "{{TOMCAT_PATH}}/tomcat9"
+    - STUNDENTWAR : https://github.com/devops090/StackScripts/blob/master/APPSTACK/student.war
   tasks :
 
     - name : print the TOMCAT_DIR
@@ -20,7 +21,7 @@
     - name : find the files and folders from webapps
       find :
         paths : "{{TOMCAT_DIR}}/webapps"
-        file_type : any
+        file_type : *.war
       register : out
       become_user : "{{USERNAME}}"
 
